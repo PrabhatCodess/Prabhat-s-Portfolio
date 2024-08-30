@@ -1957,7 +1957,7 @@ color: rgb(162, 162, 162);
    #about-end1::before{
        content: "";
        position: absolute;
-       top: -120px;
+       top: -90px;
        width: 100%;
        height: 70px;
        background-image: url(https://abhishekjha.me/rip.f6d7c4dd.svg);
@@ -12778,13 +12778,13 @@ iframe {
 
 
     #nav a:nth-child(2) {
-        display: block;
+        display: none;
     }
 
 
 
     #home #nav #socials {
-        display: block;
+        display: none;
     }
 
 

@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/react"
+
 function locomotiveSmoothScroll(){
     gsap.registerPlugin(ScrollTrigger);
 
@@ -71,45 +73,65 @@ function valueSetters(){
   
 }
 function loaderAnimation() {
-  var tl = gsap.timeline();
 
-  tl
-  .from("#loader .child span", {
-    x: 100,
-    duration: 1,
-    ease: Power3.easeInOut,
-    stagger:0.15
-  })
-  
-  .to("#loader .parent .child", {
-    y: "-100%",
-    duration: 1,
-    ease: "power3.out", // This will create a slow-down effect at the end
-    stagger:0.1
-  })
-  
-  .to("#loader", {
-    height: 0,
-    duration: 1,
-    ease: "power3.out", // Slow down towards the end
-  }, "-=0.65") // Overlap slightly with the previous animation
-  
-  .to("#green", {
-    height: "100%",
-    top: 0,
-    duration: 1,
-    ease: "power3.out", // Slow down towards the end
-  }, "-=0.8") // Align this animation with the start
-  
-  .to("#green", {
-    height: 0,
-    top: 0,
-    duration: 0.6,
-    ease: "power3.out", // Slow down towards the end
-    onComplete: function() {
-        animateHomepage(); 
-    }
-  }, "-=0.6"); // Overlap slightly with the previous animation
+  function initialTLoader() {
+    // Create a GSAP timeline for the initial animations
+    var initialTl = gsap.timeline();
+
+    // Initial animations that should run before the page is fully loaded
+    initialTl.from("#loader .child span", {
+      x: -200,
+      duration: 1,
+      ease: Power3.easeInOut,
+      stagger: 0.1
+    });
+  }
+
+  initialTLoader();
+
+  // Wait for the page to fully load
+  window.onload = function () {
+    // Hide the loader-logo when the page fully loads
+
+
+    // Add a 3-second delay before the remaining animations start
+    setTimeout(function () {
+      // Create a separate GSAP timeline for the remaining animations
+      var remainingTl = gsap.timeline();
+
+      var loaderLogo = document.querySelector(".loader-logo");
+      loaderLogo.style.display = "none";
+
+      // Rest of the animations after the page is fully loaded
+      remainingTl.to("#loader .parent .child", {
+        y: "-100%",
+        duration: 1,
+        ease: "power3.out", 
+        stagger: 0.05
+      })
+      .to("#loader", {
+        height: 0,
+        duration: 1,
+        ease: "power3.out"
+      }, "-=0.65")
+      .to("#green", {
+        height: "100%",
+        top: 0,
+        duration: 1,
+        ease: "power3.out"
+      }, "-=0.8")
+      .to("#green", {
+        height: 0,
+        top: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        onComplete: function () {
+          animateHomepage(); // Your homepage animation
+        }
+      }, "-=0.6");
+      
+    }, 1700); // Add a 3-second delay (3000 milliseconds)
+  };
 }
 function animateHomepage(){
     
