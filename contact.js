@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/react"
 
 function labelFocusAnimation(){
     const input = document.querySelectorAll(".contact-input");
