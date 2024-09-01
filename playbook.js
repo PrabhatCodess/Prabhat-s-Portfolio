@@ -1,5 +1,3 @@
-
-
 function locomotiveSmoothScroll(){
     gsap.registerPlugin(ScrollTrigger);
 
@@ -60,16 +58,7 @@ function revealToSpan (){
 }
 function valueSetters(){
     gsap.set("#nav a", { y: "-100%", opacity: 0 });
-    gsap.set("#home span .child", { y: "100%" });
-    gsap.set("#home #row2 img", {  opacity: 0 });
-
-    document.querySelectorAll("#Visual>g>g>path, #Visual>g>g>polyline").forEach(function (e) {
-      var character = e
-  
-      character.style.strokeDasharray = character.getTotalLength() + "px";
-      character.style.strokeDashoffset = character.getTotalLength() + "px";
-  
-    })
+    gsap.set(".phead  img", {  opacity: 0 });
   
 }
 function loaderAnimation() {
@@ -145,25 +134,9 @@ function animateHomepage(){
         ease:Expo.easeInOut
      })
 
-     tl.to("#home .parent .child", {
-        y: 0,
-        stagger:.3,  
-        duration:2,
-        ease:Expo.easeInOut
-     })
-
-     tl.to("#home #row1 h1" , {
-        y: 0,
-        stagger:2,  
-        duration:0.1,
-        ease:Expo.easeInOut
-     })
-     tl.to("#home .playbook_header img", {
+     tl.to("#home_playbook .playbook_header img", {
       opacity:1,
       ease:Expo.easeInOut,
-      onComplete:function(){
-        animateSvg();
-      }
    })
 }
 function revealSocial() {
@@ -232,9 +205,11 @@ function creditsAnimationBtn(){
   
 }
 function formSlider() {
-  const iframeContainer = document.querySelector('.iframe-container');
+  const iframeContainer = document.querySelector('.iframe-container_playbook');
   const openButton = document.querySelector('.btn2');
   const nav = document.querySelector('#nav');
+  const footer = document.querySelector('footer');
+
 
   if (openButton && iframeContainer && nav) {
     // Button to open iframe

@@ -1,5 +1,3 @@
-
-
 function locomotiveSmoothScroll(){
     gsap.registerPlugin(ScrollTrigger);
 
@@ -481,6 +479,7 @@ function formSlider() {
   const iframeContainer = document.querySelector('.iframe-container');
   const openButton = document.querySelector('.btn2');
   const nav = document.querySelector('#nav');
+  const footer = document.querySelector('footer');
 
   if (openButton && iframeContainer && nav) {
     // Button to open iframe
