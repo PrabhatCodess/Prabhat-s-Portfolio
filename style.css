@@ -8338,32 +8338,33 @@ footer  #foot-cta .btn2:hover #button2bg{
            /* background-color: red; */
          }
          #foot-socials .tags a{
-           height: 4vw;
-           width: 20vw;
-           display: block;
-           position: absolute;
-           /* background-color: red; */
-           z-index: 99;
-         }
-       
-         #foot-socials .tags .social-bg{
-           height: 0vw;
-           width: 20vw;
-           position: absolute;
-           background-color: #14cf93;
-           transition: height cubic-bezier(0.19, 1, 0.22, 1) 1s;
-         }
-         #foot-socials .tags:hover .social-bg{
-           height: 4vw;
-           cursor: pointer;
-           pointer-events: none;
-         }
-         #foot-socials .tags:hover .social{
-           padding: 0 1.5vw;
-         }
-         #foot-socials .tags:hover h5{
-           padding: 0 1.5vw;
-         }
+            height: 30%;
+            width: 100%;
+            display: block;
+            position: absolute;
+            /* background-color: red; */
+            z-index: 99;
+          }
+        
+          #foot-socials .tags .social-bg{
+            height: 0vw;
+            width: 20vw;
+            position: absolute;
+            background-color: #14cf93;
+            transition: height cubic-bezier(0.19, 1, 0.22, 1) 1s;
+          }
+          #foot-socials .tags:hover .social-bg{
+            height: 32%;
+            width: 100%;
+            cursor: pointer;
+            pointer-events: none;
+          }
+          #foot-socials .tags:hover .social{
+            padding: 0 5vw;
+          }
+          #foot-socials .tags:hover h5{
+            padding: 0 5vw;
+          }
        
        
          footer #credits{
@@ -11501,7 +11502,7 @@ iframe {
 
 
 
-               /* Initial hidden state of iframe */
+               /* Initial hidden state of iframe_playbook */
 .iframe-container_playbook {
     position: absolute;
     top: -12vw;
@@ -11582,6 +11583,121 @@ iframe {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+.iframe-container {
+    position: absolute;
+    top: -12vw;
+    left: 0vw;
+    transform: translateX(-100%); /* Hidden off-screen */
+    width: 100vw;
+    height: 207vw;
+    overflow: hidden;
+    /* background-color: red; */
+    z-index: 100;
+    opacity: 0;
+    transition: transform  opacity 1s cubic-bezier(0.215, 0.610, 0.355, 1); /* Apply transition to transform */
+    transition:  1s cubic-bezier(0.215, 0.610, 0.355, 1); 
+
+}
+
+/* Active state for the iframe */
+.iframe-container.active {
+    transform: translateX(4%); /* Moves into view */
+    height: 207vw; /* Set the desired height when active */
+    width: 109vw; /* Set the desired width when active */
+    z-index: 100;
+    /* background-color: red; */
+    opacity: 1;
+
+}
+
+.iframe-container.active footer{
+    opacity: 1;
+}
+
+/* Style the iframe inside the container */
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Styling for the close button */
+.iframe-container .iframe-close_btn {
+    height: 10vw;
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 70px;
+    right: 6vw;
+    background-color: #14CF93;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s; /* Smooth hover transition */
+}
+
+/* Hover effect for close button */
+.iframe-container .iframe-close_btn:hover {
+    opacity: 0.8;
+    transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+/* Styling for close button image */
+.iframe-container .iframe-close_btn img {
+    width: 50%;
+    transform: scale(1);
+    transition: transform 1s;
+}
+
+/* Hover effect for close button image */
+.iframe-container .iframe-close_btn:hover img {
+    transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
        
          footer #foot-socials{
            position: relative;
@@ -11650,8 +11766,8 @@ iframe {
            /* background-color: red; */
          }
          #foot-socials .tags a{
-           height: 4vw;
-           width: 20vw;
+           height: 30%;
+           width: 86%;
            display: block;
            position: absolute;
            /* background-color: red; */
@@ -11666,15 +11782,16 @@ iframe {
            transition: height cubic-bezier(0.19, 1, 0.22, 1) 1s;
          }
          #foot-socials .tags:hover .social-bg{
-           height: 4vw;
+           height: 30%;
+           width: 86%;
            cursor: pointer;
            pointer-events: none;
          }
          #foot-socials .tags:hover .social{
-           padding: 0 1.5vw;
+           padding: 0 5vw;
          }
          #foot-socials .tags:hover h5{
-           padding: 0 1.5vw;
+           padding: 0 5vw;
          }
        
        
