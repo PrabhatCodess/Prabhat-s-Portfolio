@@ -1838,7 +1838,7 @@ footer #foot-cta .btn1 a {
   z-index: 99;
 }
 
-footer #foot-cta .btn1 #buttonbg {
+footer #foot-cta .btn1 #buttonbg1 {
   top: 1.5vw;
   left: 25vw;
   height: 6vw;
@@ -1852,7 +1852,7 @@ footer #foot-cta .btn1 #buttonbg {
   transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.4s;
 }
 
-footer #foot-cta .btn1:hover #buttonbg {
+footer #foot-cta .btn1:hover #buttonbg1 {
   top: 1.5vw;
   left: 5vw;
   height: 6vw;
@@ -1902,7 +1902,7 @@ footer #foot-cta .btn2:hover a {
 }
 
 /* Initial hidden state of iframe */
-.iframe-container {
+.iframe-container_playbook {
   position: absolute;
   top: -12vw;
   left: 0;
@@ -1915,7 +1915,7 @@ footer #foot-cta .btn2:hover a {
 }
 
 /* Active state for the iframe */
-.iframe-container.active {
+.iframe-container_playbook.active {
   transform: translateX(0); /* Moves into view */
   height: 50vw; /* Set the desired height when active */
   width: 100vw; /* Set the desired width when active */
@@ -1930,7 +1930,7 @@ iframe {
 }
 
 /* Styling for the close button */
-.iframe-container .iframe-close_btn {
+.iframe-container_playbook .iframe-close_btn {
   height: 3vw;
   width: 3vw;
   display: flex;
@@ -1947,24 +1947,24 @@ iframe {
 }
 
 /* Hover effect for close button */
-.iframe-container .iframe-close_btn:hover {
+.iframe-container_playbook .iframe-close_btn:hover {
   opacity: 0.8;
   transform: scale(1.1); /* Slight scaling effect on hover */
 }
 
 /* Styling for close button image */
-.iframe-container .iframe-close_btn img {
+.iframe-container_playbook .iframe-close_btn img {
   width: 30%;
   transform: scale(1);
   transition: transform 1s;
 }
 
 /* Hover effect for close button image */
-.iframe-container .iframe-close_btn:hover img {
+.iframe-container_playbook .iframe-close_btn:hover img {
   transform: scale(1.1); /* Slight scaling effect on hover */
 }
 
-footer #foot-cta .btn2 #button2bg {
+footer #foot-cta .btn2 #buttonbg2 {
   top: 1.5vw;
   right: 19vw;
   height: 6vw;
@@ -1978,7 +1978,7 @@ footer #foot-cta .btn2 #button2bg {
   transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.4s;
 }
 
-footer #foot-cta .btn2:hover #button2bg {
+footer #foot-cta .btn2:hover #buttonbg2 {
   top: 1.5vw;
   right: 4.5vw;
   height: 6vw;
