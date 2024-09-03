@@ -2063,6 +2063,22 @@ footer #foot-socials {
   cursor: pointer;
   pointer-events: none;
 }
+
+
+
+
+#foot-socials .tags .social-bg_playbook {
+  height: 0vw;
+  width: 20vw;
+  position: absolute;
+  background-color: #14cf93;
+  transition: height cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+#foot-socials .tags:hover .social-bg_playbook {
+  height: 4vw;
+  cursor: pointer;
+  pointer-events: none;
+}
 #foot-socials .tags:hover .social {
   padding: 0 1.5vw;
 }
