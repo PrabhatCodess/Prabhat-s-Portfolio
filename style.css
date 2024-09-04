@@ -1713,7 +1713,7 @@ polyline {
 #about-end1::before {
   content: "";
   position: absolute;
-  top: -90px;
+  top: -100px;
   width: 100%;
   height: 70px;
   background-image: url(https://abhishekjha.me/rip.f6d7c4dd.svg);
