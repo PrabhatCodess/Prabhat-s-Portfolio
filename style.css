@@ -1838,6 +1838,34 @@ footer #foot-cta .btn1 a {
   z-index: 99;
 }
 
+footer #foot-cta .btn1 #buttonbg {
+  top: 1.5vw;
+  left: 25vw;
+  height: 6vw;
+  width: 5vw;
+  border-radius: 60px;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  opacity: 0;
+  background-color: rgb(255, 255, 255);
+  transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.4s;
+}
+
+footer #foot-cta .btn1:hover #buttonbg {
+  top: 1.5vw;
+  left: 5vw;
+  height: 6vw;
+  width: 50.6vw;
+  opacity: 1;
+  border-radius: 60px;
+  pointer-events: none;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+}
+
+
+
+
 footer #foot-cta .btn1 #buttonbg1 {
   top: 1.5vw;
   left: 25vw;
@@ -1862,6 +1890,7 @@ footer #foot-cta .btn1:hover #buttonbg1 {
   pointer-events: none;
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
 }
+
 
 footer #foot-cta .btn1:hover a {
   color: #000000;
@@ -1900,6 +1929,74 @@ footer #foot-cta .btn2 h5 {
 footer #foot-cta .btn2:hover a {
   color: #000000;
 }
+
+
+
+/* Initial hidden state of iframe */
+.iframe-container {
+  position: absolute;
+  top: -12vw;
+  left: 0;
+  transform: translateX(-100%); /* Hidden off-screen */
+  width: 100vw;
+  height: 100vw;
+  /* overflow: hidden; */
+  /* background-color: red; */
+  transition: transform 1s cubic-bezier(0.215, 0.61, 0.355, 1); /* Apply transition to transform */
+}
+
+/* Active state for the iframe */
+.iframe-container.active {
+  transform: translateX(0); /* Moves into view */
+  height: 50vw; /* Set the desired height when active */
+  width: 100vw; /* Set the desired width when active */
+  z-index: 100;
+}
+
+/* Style the iframe inside the container */
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Styling for the close button */
+.iframe-container .iframe-close_btn {
+  height: 3vw;
+  width: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 4vw;
+  right: 1vw;
+  background-color: #14cf93;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s; /* Smooth hover transition */
+}
+
+/* Hover effect for close button */
+.iframe-container .iframe-close_btn:hover {
+  opacity: 0.8;
+  transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+/* Styling for close button image */
+.iframe-container .iframe-close_btn img {
+  width: 30%;
+  transform: scale(1);
+  transition: transform 1s;
+}
+
+/* Hover effect for close button image */
+.iframe-container .iframe-close_btn:hover img {
+  transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+
+
 
 /* Initial hidden state of iframe */
 .iframe-container_playbook {
@@ -1962,6 +2059,34 @@ iframe {
 /* Hover effect for close button image */
 .iframe-container_playbook .iframe-close_btn:hover img {
   transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+
+
+footer #foot-cta .btn2 #button2bg {
+  top: 1.5vw;
+  right: 19vw;
+  height: 6vw;
+  width: 5vw;
+  border-radius: 60px;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  opacity: 0;
+  background-color: rgb(255, 255, 255);
+  transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.4s;
+}
+
+footer #foot-cta .btn2:hover #button2bg {
+  top: 1.5vw;
+  right: 4.5vw;
+  height: 6vw;
+  width: 34.7vw;
+  opacity: 1;
+  border-radius: 60px;
+  pointer-events: none;
+  z-index: 1;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
 }
 
 footer #foot-cta .btn2 #buttonbg2 {
