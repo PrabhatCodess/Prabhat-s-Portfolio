@@ -230,6 +230,49 @@ function formSlider() {
 }
 
 
+function ScrollbarAnimation(){
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Select the scrollbar elements
+    const scrollbarThumb = document.querySelector('.c-scrollbar_thumb');
+    const scrollbarTrack = document.querySelector('.c-scrollbar');
+  
+    // Ensure elements exist before proceeding
+    if (!scrollbarThumb || !scrollbarTrack) {
+      console.error('Scrollbar elements not found');
+      return;
+    }
+  
+    // Function to update scrollbar thumb position
+    function updateScrollbarThumb() {
+      // Calculate the document's scrollable height and viewport height
+      const documentHeight = document.documentElement.scrollHeight;
+      const viewportHeight = window.innerHeight;
+  
+      // Calculate the scroll percentage
+      const scrollPercentage = window.scrollY / (documentHeight - viewportHeight);
+  
+      // Calculate thumb height based on viewport height and scrollable content height
+      const thumbHeight = Math.max(50, scrollbarTrack.clientHeight * (viewportHeight / documentHeight));
+  
+      // Calculate thumb position based on scroll percentage
+      const thumbTop = (scrollbarTrack.clientHeight - thumbHeight) * scrollPercentage;
+  
+      // Update thumb position and height
+      scrollbarThumb.style.height = `${thumbHeight}px`;
+      scrollbarThumb.style.transform = `translateY(${thumbTop}px)`;
+    }
+  
+    // Update on scroll and resize
+    window.addEventListener('scroll', updateScrollbarThumb);
+    window.addEventListener('resize', updateScrollbarThumb);
+  
+    // Initial call to position thumb correctly on page load
+    updateScrollbarThumb();
+  });
+
+}
+
 locomotiveSmoothScroll();
 revealToSpan ();
 valueSetters();
@@ -237,3 +280,4 @@ loaderAnimation();
 revealSocial();
 creditsAnimationBtn();
 formSlider();
+ScrollbarAnimation();
