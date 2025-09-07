@@ -564,33 +564,6 @@ function ScrollbarAnimation(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 locomotiveSmoothScroll();
 revealToSpan ();
 valueSetters();
