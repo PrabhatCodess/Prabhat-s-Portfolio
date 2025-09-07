@@ -37,6 +37,7 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 ScrollTrigger.refresh();
 
 }
+
 function valueSetters(){
     gsap.set("#nav a", { y: "-100%", opacity: 0 });
     gsap.set("#home span .child", { y: "100%" });
@@ -51,6 +52,7 @@ function valueSetters(){
     })
   
 }
+
 function revealToSpan (){
     document.querySelectorAll(".reveal")
 .forEach(function(elem){
@@ -71,6 +73,7 @@ function revealToSpan (){
     elem.appendChild(parent)
 });
 }
+
 function updateClock() {
   var now = new Date();
   var hours = now.getHours();
@@ -82,8 +85,10 @@ function updateClock() {
   var timeString = hours + ":" + minutes;
   document.getElementById('time').textContent = timeString;
 }
+
 // Update clock every second
 setInterval(updateClock, 1000);
+
 function loaderAnimation() {
 
   function initialTLoader() {
@@ -145,6 +150,7 @@ function loaderAnimation() {
     }, 1700); // Add a 3-second delay (3000 milliseconds)
   };
 }
+
 function revealSocial() {
   document.addEventListener("DOMContentLoaded", function() {
       // Get the social menu item and dropdown
@@ -240,6 +246,7 @@ function revealSocial() {
       });
   });
 }
+
 function animateSvg(){
  
   gsap.to("#Visual>g>g>path, #Visual>g>g>polyline",{
@@ -250,6 +257,7 @@ function animateSvg(){
  
   })
 }
+
 function animateHomepage(){
     
 
@@ -283,6 +291,7 @@ function animateHomepage(){
       }
    })
 }
+
 function heroCardsAnimation(){
   gsap.registerPlugin(ScrollTrigger);
 
@@ -331,6 +340,7 @@ function heroCardsAnimation(){
   });
   
 }
+
 function hoverAnimationCards() {
 const cursor = document.querySelector("#cursor");
 const images = document.querySelectorAll("#work1 img, #work2 img, #work3 img, #work4 img, #work5 img");
@@ -358,6 +368,7 @@ images.forEach(function(workss) {
   });
 });
 }
+
 function backgroundColorChange(){
 document.querySelectorAll('#work1 img').forEach(img => {
   img.addEventListener('mouseover', () => {
@@ -431,6 +442,7 @@ document.querySelectorAll('#work5 img').forEach(img => {
 });
 
 }
+
 function creditsAnimationBtn(){
   document.getElementById('click_me').addEventListener('click', function() {
     const creditsTech = document.querySelector('.credits_tech');
@@ -499,9 +511,80 @@ function formSlider() {
   });
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
   locomotiveSmoothScroll();
 });
+
+function ScrollbarAnimation(){
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Select the scrollbar elements
+    const scrollbarThumb = document.querySelector('.c-scrollbar_thumb');
+    const scrollbarTrack = document.querySelector('.c-scrollbar');
+  
+    // Ensure elements exist before proceeding
+    if (!scrollbarThumb || !scrollbarTrack) {
+      console.error('Scrollbar elements not found');
+      return;
+    }
+  
+    // Function to update scrollbar thumb position
+    function updateScrollbarThumb() {
+      // Calculate the document's scrollable height and viewport height
+      const documentHeight = document.documentElement.scrollHeight;
+      const viewportHeight = window.innerHeight;
+  
+      // Calculate the scroll percentage
+      const scrollPercentage = window.scrollY / (documentHeight - viewportHeight);
+  
+      // Calculate thumb height based on viewport height and scrollable content height
+      const thumbHeight = Math.max(50, scrollbarTrack.clientHeight * (viewportHeight / documentHeight));
+  
+      // Calculate thumb position based on scroll percentage
+      const thumbTop = (scrollbarTrack.clientHeight - thumbHeight) * scrollPercentage;
+  
+      // Update thumb position and height
+      scrollbarThumb.style.height = `${thumbHeight}px`;
+      scrollbarThumb.style.transform = `translateY(${thumbTop}px)`;
+    }
+  
+    // Update on scroll and resize
+    window.addEventListener('scroll', updateScrollbarThumb);
+    window.addEventListener('resize', updateScrollbarThumb);
+  
+    // Initial call to position thumb correctly on page load
+    updateScrollbarThumb();
+  });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -520,6 +603,7 @@ backgroundColorChange();
 creditsAnimationBtn();
 scrollAnimation();
 formSlider();
+ScrollbarAnimation();
 
 
 
